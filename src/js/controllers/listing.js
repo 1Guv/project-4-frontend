@@ -1,6 +1,6 @@
 angular
   .module('plateAuction')
-  .controller('ListingCtrl', ListingCtrl)
+  .controller('ListingCtrl', ListingCtrl);
 
 ListingCtrl.$inject = [];
 function ListingCtrl() {
