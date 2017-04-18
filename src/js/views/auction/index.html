@@ -1,15 +1,58 @@
 <h1>Auction Listings</h1>
+
+<div class="">
+<table class="table">
+<tr>
+  <th class="tg-7un6">REGISTRATION</th>
+  <th class="tg-7un6">MEANING</th>
+  <th class="tg-pxng">CURRENT PRICE</th>
+  <th class="tg-pxng">START</th>
+  <th class="tg-pxng">TIME LEFT</th>
+  <th class="tg-pxng">PLACE BID</th>
+  <th class="tg-pxng">HOW MANY WATCHING</th>
+  <th class="tg-pxng">BUY NOW</th>
+</tr>
+<tr>
+  <td class="tg-yw4l"></td>
+  <td class="tg-yw4l"></td>
+  <td class="tg-yw4l"></td>
+  <td class="tg-yw4l"></td>
+  <td class="tg-yw4l"></td>
+  <td class="tg-yw4l"></td>
+  <td class="tg-yw4l"></td>
+  <td class="tg-yw4l"></td>
+</tr>
+</table>
+</div>
+
+<!-- the below loops over the user and shows each User - might not need this here -->
 <div ng-controller="UsersCtrl as user">
-
-  <div ng-repeat="user in user.all">
-    <div>{{ user.first_name }}</div>
-
-    <div ng-repeat="plate in user.plates">
-      <div>{{ plate.plate }}</div>
+  <!-- the below loops over each users NUMBER PLATE and -->
+  <!-- will use this for now but will need to show the array of plates that have been added to the auction by each user -->
+  <table class="table">
+    <!-- {{user}} -->
+    <div class="listing">REGISTRATION</div>
+    <div class="listing">MEANING</div>
+    <div class="listing">CURRENT PRICE</div>
+    <div class="listing">START</div>
+    <div class="listing">TIME LEFT</div>
+    <div class="listing">PLACE BID</div>
+    <div class="listing">WATCHING</div>
+    <div class="listing">BUY NOW</div>
+    <div ng-repeat="user in user.all">
+      <!-- <div>{{ user.first_name }}</div> -->
+      <div class="" ng-repeat="plate in user.plates">
+        <div class="listing">{{ plate.plate }}</div>
+        <div class="listing">{{ plate.meaning }}</div>
+        <div class="listing">{{ plate.sell_price }}</div>
+        <div class="listing">{{ plate.sell_price }}</div>
+        <div class="listing">{{ plate.sell_price }}</div>
+        <div class="listing">{{ plate.sell_price }}</div>
+        <div class="listing">{{ plate.sell_price }}</div>
+        <div class="listing">{{ plate.sell_price }}</div>
+      </div>
+      <br>
     </div>
 
-    <br>
-  </div>
-
-
+  </table>
 </div>
