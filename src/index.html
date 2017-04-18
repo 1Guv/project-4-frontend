@@ -10,7 +10,6 @@
     <!-- endinject -->
   </head>
   <header ng-controller="MainCtrl as main" ng-class="main.pageName">
-    <header>
       <nav>
         <ul>
           <li><a ui-sref="home">Home</a></li>
@@ -22,36 +21,14 @@
           <li><a ui-sref="auction" ui-sref-active="active">Auction</a></li>
         </ul>
       </nav>
-    </header>
     <div class="message" ng-if="main.message">
       <div class="container">{{main.message}}</div>
     </div>
-    <main ui-view></main>
   </header>
 
   <body>
     <h1>APNAPLATES</h1>
     <h2>Number Plate Auction</h2>
-
-
-    <br>
-    <br>
-
-    <div ng-controller="UsersCtrl as user">
-
-      <div ng-repeat="user in user.all">
-        <div>{{ user.first_name }}</div>
-
-        <div ng-repeat="plate in user.plates">
-          <div>{{ plate.plate }}</div>
-        </div>
-
-        <br>
-      </div>
-
-
-    </div>
-
-
+    <main ui-view></main>
   </body>
 </html>

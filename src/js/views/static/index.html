@@ -1,1 +1,15 @@
 <h1>VIEWS INDEX</h1>
+<div ng-controller="UsersCtrl as user">
+
+  <div ng-repeat="user in user.all">
+    <div>{{ user.first_name }}</div>
+
+    <div ng-repeat="plate in user.plates">
+      <div>{{ plate.plate }}</div>
+    </div>
+
+    <br>
+  </div>
+
+
+</div>
