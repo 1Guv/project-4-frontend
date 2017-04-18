@@ -9,8 +9,24 @@
     <!-- endinject -->
   </head>
   <body ng-controller="ListingCtrl as listing">
-    <h1>APNAPLATES Plate Auction</h1>
-    {{ 2+2 }}
-    {{ listing.awesome }}
+    <h1>APNAPLATES</h1>
+    <h2>Number Plate Auction</h2>
+
+    <div ng-controller="UsersCtrl as user">
+
+      <div ng-repeat="user in user.all">
+        <div>{{ user.first_name }}</div>
+
+        <div ng-repeat="plate in user.plates">
+          <div>{{ plate.plate }}</div>
+        </div>
+        
+        <br>
+      </div>
+
+
+    </div>
+
+
   </body>
 </html>
