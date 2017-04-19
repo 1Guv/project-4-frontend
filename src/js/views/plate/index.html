@@ -1,18 +1,13 @@
-<h1>Auction Listings</h1>
+<h1>Auction</h1>
 <!-- the below loops over the user and shows each User - might not need this here -->
-<!--<div ng-controller="UsersProfileCtrl as user">
+<div ng-controller="UsersProfileCtrl as user">
   <!-- the below loops over each users NUMBER PLATE and -->
   <!-- will use this for now but will need to show the array of plates that have been added to the auction by each user -->
-  <!-- <div ng-repeat="user in user.all">
+  <div ng-repeat="user in user.all">
     <div>{{ user.first_name }}</div>
     <div ng-repeat="plate in user.plates">
       <div>{{ plate.plate }}</div>
     </div>
     <br>
   </div>
-</div> -->
-    {{ plates }}
-<ul>
-  <!-- <h1>Plates</h1> -->
-  <li ng-repeat="plate in plates.plate">{{ plate.plate }}</li>
-</ul>
+</div>

@@ -1,0 +1,12 @@
+<h1>Profile Page</h1>
+<div ng-controller="UsersProfileCtrl as user">
+  <!-- the below loops over each users NUMBER PLATE and -->
+  <!-- will use this for now but will need to show the array of plates that have been added to the auction by each user -->
+  <div ng-repeat="user in user.all">
+    <div>{{ user.first_name }}</div>
+    <div ng-repeat="plate in user.plates">
+      <div>{{ plate.plate }}</div>
+    </div>
+    <br>
+  </div>
+</div>
