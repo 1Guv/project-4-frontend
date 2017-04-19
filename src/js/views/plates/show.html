@@ -1,0 +1,26 @@
+<h1>Auction Plate Show</h1>
+
+{{ platesShow.plate }}
+
+
+
+<h4>{{ platesShow.plate.plate }}</h4>
+<h4>{{ platesShow.plate.meaning }}</h4>
+<h4>{{ platesShow.plate.sell_price }}</h4>
+<h4>{{ platesShow.plate.start_date }}</h4>
+<h4>{{ platesShow.plate.status }}</h4>
+<h4>{{ platesShow.plate.reserve }}</h4>
+<h4>{{ platesShow.plate.expiry_date }}</h4>
+
+<form ng-submit="platesShow.addBid()">
+  <input type="number" ng-model="platesShow.bid.amount">
+  <button>BID</button>
+</form>
+
+<ul>
+  <li ng-repeat="bid in platesShow.plate.bids">
+    {{ bid.amount }}
+    {{ bid.user.username }}
+  </li>
+
+</ul>

@@ -15,7 +15,7 @@ function AuthCtrl($auth, $state) {
 
   function login() {
     $auth.login(vm.credentials)
-      .then(() => $state.go('auction'));
+      .then(() => $state.go('platesIndex'));
   }
 
   vm.login = login;
