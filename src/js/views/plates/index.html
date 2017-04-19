@@ -1,8 +1,7 @@
 <h1>Auction Listings</h1>
 
 <!-- <h1>Plates</h1> -->
-<h4>PLATE - MEANING - SELL PRICE - START DATE - STATUS - RESERVE - EXPIRY DATE</h4>
-<div ng-repeat="plate in plates.plate">
+<!-- <div ng-repeat="plate in plates.plate"> -->
   <!-- <h3>{{ plate.plate }}</h3>
   <h3>{{ plate.meaning }}</h3>
   <h3>{{ plate.sell_price }}</h3>
@@ -11,5 +10,30 @@
   <h3>{{ plate.reserve }}</h3>
   <h3>{{ plate.expiry_date }}</h3> -->
 
-  <h4><a ui-sref="platesShow({ id: plate.id })">{{ plate.plate }} - {{ plate.meaning }} - {{ plate.sell_price }} - {{ plate.start_date }} - {{ plate.status }} - {{ plate.reserve }} - {{ plate.expiry_date }}</a></h4>
-</div>
+  <!-- <h4><a ui-sref="platesShow({ id: plate.id })">{{ plate.plate }} - {{ plate.meaning }} - {{ plate.sell_price }} - {{ plate.start_date }} - {{ plate.status }} - {{ plate.reserve }} - {{ plate.expiry_date }}</a></h4> -->
+<!-- </div> -->
+
+<table st-table="plates.plate" class="table table-striped">
+	<thead>
+	<tr>
+		<th>PLATE</th>
+		<th>MEANING</th>
+		<th>PRICE</th>
+		<th>START DATE</th>
+		<th>STATUS</th>
+		<th>RESERVE</th>
+		<th>EXPIRY DATE</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="plate in plates.plate">
+		<td><a ui-sref="platesShow({ id: plate.id })">{{plate.plate}}</a></td>
+		<td>{{plate.meaning}}</td>
+		<td>{{plate.sell_price}}</td>
+		<td>{{plate.start_date}}</td>
+		<td>{{plate.status}}</td>
+		<td>{{plate.reserve}}</td>
+		<td>{{plate.expiry_date}}</td>
+	</tr>
+	</tbody>
+</table>

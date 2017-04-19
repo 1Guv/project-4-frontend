@@ -34,7 +34,7 @@ function PlatesShowCtrl(Plate, Bid, $stateParams) {
       .$promise
       .then((bid) => {
         console.log(bid);
-      })
+      });
   }
 
 }
