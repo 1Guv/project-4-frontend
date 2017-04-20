@@ -1,5 +1,5 @@
 <h1 class="well">Auction Listings</h1>
-
+<p><input type="text" placeholder="Plate Search.." ng-model="search.plate"></p>
 <table st-table="plates.plate" class="table table-striped">
 	<thead>
 	<tr>
@@ -15,13 +15,13 @@
 	</tr>
 	</thead>
 	<tbody>
-	<tr ng-repeat="plate in plates.plate">
+	<tr ng-repeat="plate in plates.plate | filter : search">
 		<td><a ui-sref="platesShow({ id: plate.id })"><span class="plate">{{plate.plate}}</span></a></td>
 		<td>{{plate.meaning}}</td>
-		<td>{{plate.sell_price}}</td>
+		<td>{{plate.sell_price | currency:'£'}}</td>
 		<td>{{plate.start_date}}</td>
 		<td>{{plate.status}}</td>
-		<td>{{plate.reserve}}</td>
+		<td>{{plate.reserve | currency:'£'}}</td>
 		<td>{{plate.expiry_date}}</td>
 		<td>{{plate.dLeft}}</td>
 		<td><button class="btn-default" ui-sref="platesShow({ id: plate.id })">BID NOW</button></td>

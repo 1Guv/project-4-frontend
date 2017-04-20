@@ -25,7 +25,7 @@
     <tr>
       <td><span class="plateTwo">{{plate.plate}}</span></td>
       <td>{{plate.meaning}}</td>
-      <td>{{plate.sell_price}}</td>
+      <td>{{plate.sell_price | currency:'£'}}</td>
       <td>{{plate.start_date}}</td>
       <td>{{plate.expiry_date}}</td>
       <td>{{plate.reserve}}</td>
@@ -41,15 +41,15 @@
     <tr>
       <th>PLATE</th>
       <th>BID</th>
-      <th>BID PRICE</th>
+      <th>PRICE</th>
     </tr>
   </thead>
   <tbody ng-repeat="bid in usersProfile.user.bids">
     <tr>
       <!-- <div>{{usersProfile.user.bids}}</div> -->
       <td><span class="plateTwo">{{bid.plate.plate}}</span></td>
-      <td>{{bid.amount}}</td>
-      <td>{{bid.plate.sell_price}}</td>
+      <td>{{bid.amount | currency:'£'}}</td>
+      <td>{{bid.plate.sell_price | currency:'£'}}</td>
       <br>
     </tr>
   </tbody>
