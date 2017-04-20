@@ -7,18 +7,35 @@
     <br>
   </div>
 </div>
+<button class="btn-primary" ui-sref="usersEdit">Edit</button>
 
 <h2>Your Plates:</h2>
-<div ng-repeat="plate in usersProfile.user.plates">
-  <div>{{plate.plate}}</div>
-  <div>{{plate.meaning}}</div>
-  <div>{{plate.sell_price}}</div>
-  <div>{{plate.start_date}}</div>
-  <div>{{plate.expiry_date}}</div>
-  <div>{{plate.reserve}}</div>
-  <br>
-</div>
-<div class=""><a ui-sref="platesNew">Add Plate</a></div>
+<table class="table table-strpied">
+  <thead>
+  <tr>
+    <th>PLATE</th>
+    <th>MEANING</th>
+    <th>PRICE</th>
+    <th>START DATE</th>
+    <th>EXPIRY DATE</th>
+    <th>RESERVE</th>
+  </tr>
+  </thead>
+
+    <tbody ng-repeat="plate in usersProfile.user.plates">
+      <tr>
+        <td>{{plate.plate}}</td>
+        <td>{{plate.meaning}}</td>
+        <td>{{plate.sell_price}}</td>
+        <td>{{plate.start_date}}</td>
+        <td>{{plate.expiry_date}}</td>
+        <td>{{plate.reserve}}</td>
+      </tr>
+    </tbody>
+
+</table>
+<br>
+<button class="btn-primary" ui-sref="platesNew">Add Plate</button>
 
 <h2>Your Bids:</h2>
 <div ng-repeat="bid in usersProfile.user.bids">
