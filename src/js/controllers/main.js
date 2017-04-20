@@ -9,6 +9,8 @@ function MainCtrl($rootScope, $state, $auth) {
   vm.isNavCollapsed = true;
   vm.isAuthenticated = $auth.isAuthenticated;
 
+  vm.currentUser = null;
+
   $rootScope.$on('error', (e, err) => {
     vm.stateHasChanged = false;
     vm.message = err.data.message;
@@ -19,13 +21,17 @@ function MainCtrl($rootScope, $state, $auth) {
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
     vm.isNavCollapsed = true;
-    if($auth.getPayload()) vm.currentUser = $auth.getPayload();
+    if($auth.getPayload() && !vm.currentUser) vm.currentUser = $auth.getPayload();
   });
 
   // const protectedStates = ['eventsNew', 'eventsEdit'];
   const protectedStates = [];
 
   $rootScope.$on('$stateChangeStart', (e, toState) => {
+    // if($auth.isAuthenticated()) {
+    //   vm.currentUserId = $auth.getPayload().id;
+    // }
+
     if((!$auth.isAuthenticated() && protectedStates.includes(toState.name))) {
       e.preventDefault();
       $state.go('login');
@@ -36,6 +42,7 @@ function MainCtrl($rootScope, $state, $auth) {
 
   function logout() {
     $auth.logout();
+    vm.currentUser = null;
     $state.go('home');
   }
 

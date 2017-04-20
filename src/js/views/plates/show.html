@@ -1,26 +1,45 @@
-<h1>Auction Plate Show</h1>
+<h1 class="well">Auction Plate Show</h1>
+<h2>Make your bid on</h2>
+<br>
+<div class="plate">{{platesShow.plate.plate}}</div>
+<br>
 
 <!-- {{ platesShow.plate }} -->
-
-
-
-<h4>{{ platesShow.plate.plate }}</h4>
-<h4>{{ platesShow.plate.meaning }}</h4>
-<h4>{{ platesShow.plate.sell_price }}</h4>
-<h4>{{ platesShow.plate.start_date }}</h4>
-<h4>{{ platesShow.plate.status }}</h4>
-<h4>{{ platesShow.plate.reserve }}</h4>
-<h4>{{ platesShow.plate.expiry_date }}</h4>
+<table st-table="plates.plate" class="table table-striped">
+  <thead>
+  <tr>
+    <th>PLATE</th>
+    <th>MEANING</th>
+    <th>PRICE</th>
+    <th>START DATE</th>
+    <th>STATUS</th>
+    <th>RESERVE</th>
+    <th>EXPIRY DATE</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ platesShow.plate.plate }}</td>
+      <td>{{ platesShow.plate.meaning }}</td>
+      <td>{{ platesShow.plate.sell_price }}</td>
+      <td>{{ platesShow.plate.start_date }}</td>
+      <td>{{ platesShow.plate.status }}</td>
+      <td>{{ platesShow.plate.reserve }}</td>
+      <td>{{ platesShow.plate.expiry_date }}</td>
+    </tr>
+  </tbody>
+</table>
 
 <form ng-submit="platesShow.addBid()">
   <input type="number" ng-model="platesShow.bid.amount">
-  <button>BID</button>
+  <button>ENTER YOUR BID NOW</button>
 </form>
-
-<ul>
-  <li ng-repeat="bid in platesShow.plate.bids">
-    {{ bid.amount }}
-    {{ bid.user.username }}
-  </li>
-
-</ul>
+<br>
+<div>
+  <h4>Current Bids:</h4>
+  <div ng-repeat="bid in platesShow.plate.bids">
+    <div class="text-capitalize"><span class="blue">{{ bid.user.username }}</span> - <span class="badge">£ {{ bid.amount }}</span></div>
+    <!-- <div>£ {{ bid.amount }}</div> -->
+    <br>
+  </div>
+</div>
