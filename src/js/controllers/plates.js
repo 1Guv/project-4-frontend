@@ -13,27 +13,18 @@ function PlatesCtrl(Plate, $stateParams) {
       vm.plate = data;
       // console.log(vm.plate);
 
+    // Shows the days left for the item to finish
     function daysLeft() {
-      // get start date
-      // console.log(vm.plate[0].start_date);
-
       vm.plate.forEach((plate) => {
         plate.dLeft = Math.floor(( Date.parse(plate.expiry_date) - Date.parse(plate.start_date)) / 86400000);
       });
-
-
-      // var startDate = vm.plate[0].start_date;
-      // // get end date
-      // // console.log(vm.plate[0].expiry_date);
-      // var expiryDate = vm.plate[0].expiry_date;
-      // // store the difference in variable called dateLeft
-      // vm.days = Math.floor(( Date.parse(expiryDate) - Date.parse(startDate)) / 86400000);
-      // // maybe a counter so it shows seconds going down and the date and time reducing as appropriate
-      // console.log(vm.days);
     }
     daysLeft();
-
   });
+
+  function callEveryHour() {
+    setInterval(daysLeft(), 1000 * 60 * 60);
+  }
 
 }
 
