@@ -1,18 +1,5 @@
 <h1 class="well">Auction Listings</h1>
 
-<!-- <h1>Plates</h1> -->
-<!-- <div ng-repeat="plate in plates.plate"> -->
-  <!-- <h3>{{ plate.plate }}</h3>
-  <h3>{{ plate.meaning }}</h3>
-  <h3>{{ plate.sell_price }}</h3>
-  <h3>{{ plate.start_date }}</h3>
-  <h3>{{ plate.status }}</h3>
-  <h3>{{ plate.reserve }}</h3>
-  <h3>{{ plate.expiry_date }}</h3> -->
-
-  <!-- <h4><a ui-sref="platesShow({ id: plate.id })">{{ plate.plate }} - {{ plate.meaning }} - {{ plate.sell_price }} - {{ plate.start_date }} - {{ plate.status }} - {{ plate.reserve }} - {{ plate.expiry_date }}</a></h4> -->
-<!-- </div> -->
-
 <table st-table="plates.plate" class="table table-striped">
 	<thead>
 	<tr>
@@ -23,6 +10,7 @@
 		<th>STATUS</th>
 		<th>RESERVE</th>
 		<th>EXPIRY DATE</th>
+		<th>DAYS LEFT</th>
 		<th>BID NOW</th>
 	</tr>
 	</thead>
@@ -35,6 +23,7 @@
 		<td>{{plate.status}}</td>
 		<td>{{plate.reserve}}</td>
 		<td>{{plate.expiry_date}}</td>
+		<td>{{plate.dLeft}}</td>
 		<td><button class="btn-default" ui-sref="platesShow({ id: plate.id })">BID NOW</button></td>
 	</tr>
 	</tbody>

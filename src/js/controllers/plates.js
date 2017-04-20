@@ -12,7 +12,28 @@ function PlatesCtrl(Plate, $stateParams) {
   Plate.query($stateParams, (data)=>{
       vm.plate = data;
       // console.log(vm.plate);
-    });
+
+    function daysLeft() {
+      // get start date
+      // console.log(vm.plate[0].start_date);
+
+      vm.plate.forEach((plate) => {
+        plate.dLeft = Math.floor(( Date.parse(plate.expiry_date) - Date.parse(plate.start_date)) / 86400000);
+      });
+
+
+      // var startDate = vm.plate[0].start_date;
+      // // get end date
+      // // console.log(vm.plate[0].expiry_date);
+      // var expiryDate = vm.plate[0].expiry_date;
+      // // store the difference in variable called dateLeft
+      // vm.days = Math.floor(( Date.parse(expiryDate) - Date.parse(startDate)) / 86400000);
+      // // maybe a counter so it shows seconds going down and the date and time reducing as appropriate
+      // console.log(vm.days);
+    }
+    daysLeft();
+
+  });
 
 }
 
@@ -40,7 +61,7 @@ function PlatesShowCtrl(Plate, Bid, $stateParams) {
 
 }
 
-PlatesNewCtrl.$inject = ['Plate', '$state']
+PlatesNewCtrl.$inject = ['Plate', '$state'];
 function PlatesNewCtrl(Plate, $state) {
   const vm = this;
 

@@ -23,7 +23,12 @@ function UsersProfileCtrl(User, $stateParams, $state, $auth, Plate) {
     }
   }
 
-
+  function create() {
+    Plate.save(vm.plate, () => {
+      $state.go('platesIndex');
+    });
+  }
+  vm.create = create;
 
 }
 
