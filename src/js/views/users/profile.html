@@ -21,27 +21,36 @@
     <th>RESERVE</th>
   </tr>
   </thead>
-
-    <tbody ng-repeat="plate in usersProfile.user.plates">
-      <tr>
-        <td>{{plate.plate}}</td>
-        <td>{{plate.meaning}}</td>
-        <td>{{plate.sell_price}}</td>
-        <td>{{plate.start_date}}</td>
-        <td>{{plate.expiry_date}}</td>
-        <td>{{plate.reserve}}</td>
-      </tr>
-    </tbody>
-
+  <tbody ng-repeat="plate in usersProfile.user.plates">
+    <tr>
+      <td><span class="plateTwo">{{plate.plate}}</span></td>
+      <td>{{plate.meaning}}</td>
+      <td>{{plate.sell_price}}</td>
+      <td>{{plate.start_date}}</td>
+      <td>{{plate.expiry_date}}</td>
+      <td>{{plate.reserve}}</td>
+    </tr>
+  </tbody>
 </table>
 <br>
 <button class="btn-primary" ui-sref="platesNew">Add Plate</button>
 
 <h2>Your Bids:</h2>
-<div ng-repeat="bid in usersProfile.user.bids">
-  <!-- <div>{{usersProfile.user.bids}}</div> -->
-  <div>Plate: {{bid.plate.plate}}</div>
-  <div>Bid: {{bid.amount}}</div>
-  <div>Sell Price: {{bid.plate.sell_price}}</div>
-  <br>
-</div>
+<table class="table table-strpied">
+  <thead>
+    <tr>
+      <th>PLATE</th>
+      <th>BID</th>
+      <th>BID PRICE</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="bid in usersProfile.user.bids">
+    <tr>
+      <!-- <div>{{usersProfile.user.bids}}</div> -->
+      <td><span class="plateTwo">{{bid.plate.plate}}</span></td>
+      <td>{{bid.amount}}</td>
+      <td>{{bid.plate.sell_price}}</td>
+      <br>
+    </tr>
+  </tbody>
+</table>
