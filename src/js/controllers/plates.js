@@ -1,7 +1,8 @@
 angular
   .module('plateAuction')
   .controller('PlatesCtrl', PlatesCtrl)
-  .controller('PlatesShowCtrl', PlatesShowCtrl);
+  .controller('PlatesShowCtrl', PlatesShowCtrl)
+  .controller('PlatesNewCtrl', PlatesNewCtrl);
 
 PlatesCtrl.$inject = ['Plate', '$stateParams'];
 function PlatesCtrl(Plate, $stateParams) {
@@ -37,4 +38,17 @@ function PlatesShowCtrl(Plate, Bid, $stateParams) {
       });
   }
 
+}
+
+PlatesNewCtrl.$inject = ['Plate', '$state']
+function PlatesNewCtrl(Plate, $state) {
+  const vm = this;
+
+  function create() {
+    Plate.save({ plate: vm.new })
+      .$promise
+      .then(() => $state.go('platesIndex'));
+  }
+
+  vm.create = create;
 }

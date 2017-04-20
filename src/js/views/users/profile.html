@@ -1,8 +1,5 @@
 <h1>Profile Page</h1>
 <div>
-  <!-- the below loops over each users NUMBER PLATE and -->
-  <!-- will use this for now but will need to show the array of plates that have been added to the auction by each user -->
-
   <div>
     <div>Username: {{ usersProfile.user.username }}</div>
     <div>Full Name: {{ usersProfile.user.full_name }}</div>
@@ -21,10 +18,13 @@
   <div>{{plate.reserve}}</div>
   <br>
 </div>
+<div class=""><a ui-sref="platesNew">Add Plate</a></div>
 
 <h2>Your Bids:</h2>
-<div class="">
-  <div>{{usersProfile.user.bids[0]}}</div>
-  <div>{{usersProfile.user.bids[0].amount}}</div>
-  <div>{{usersProfile.user.bids[0].id}}</div>
+<div ng-repeat="bid in usersProfile.user.bids">
+  <!-- <div>{{usersProfile.user.bids}}</div> -->
+  <div>Plate: {{bid.plate.plate}}</div>
+  <div>Bid: {{bid.amount}}</div>
+  <div>Sell Price: {{bid.plate.sell_price}}</div>
+  <br>
 </div>

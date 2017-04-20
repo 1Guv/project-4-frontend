@@ -1,10 +1,11 @@
 angular
  .module('plateAuction')
  .controller('UsersProfileCtrl', UsersProfileCtrl)
+ .controller('UsersNewCtrl', UsersNewCtrl)
  .controller('UsersEditCtrl', UsersEditCtrl);
 
-UsersProfileCtrl.$inject = ['User', '$stateParams', '$state', '$auth'];
-function UsersProfileCtrl(User, $stateParams, $state, $auth) {
+UsersProfileCtrl.$inject = ['User', '$stateParams', '$state', '$auth', 'Plate'];
+function UsersProfileCtrl(User, $stateParams, $state, $auth, Plate) {
 
   const vm = this;
   const payload = $auth.getPayload();
@@ -21,17 +22,24 @@ function UsersProfileCtrl(User, $stateParams, $state, $auth) {
       return true;
     }
   }
-  // const vm = this;
-  //
-  // vm.user = User.get($stateParams);
 
-  // function usersDelete() {
-  //   vm.user
-  //   .$remove()
-  //   .then(() => $state.go('usersIndex'));
-  // }
-  //
-  // vm.delete = usersDelete;
+
+
+}
+
+UsersNewCtrl.$inject = ['User', '$state'];
+function UsersNewCtrl(User, $state) {
+  const vm = this;
+  vm.users = User.query();
+
+  function usersCreate() {
+    User
+      .save({ users: vm.users })
+      .$promise
+      .then(() => $state.go('usersProfile'));
+  }
+
+  vm.create = usersCreate;
 }
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
@@ -43,7 +51,7 @@ function UsersEditCtrl(User, $stateParams, $state) {
   function usersUpdate() {
     vm.user
       .$update()
-      .then(() => $state.go('usersShow', $stateParams));
+      .then(() => $state.go('usersProfile', $stateParams));
   }
 
   vm.update = usersUpdate;
