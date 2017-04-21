@@ -1,6 +1,6 @@
 <h1 class="well">Auction Listings</h1>
-<p><input type="text" placeholder="Plate Search.." ng-model="search.plate"></p>
-<table st-table="plates.plate" class="table table-striped">
+<p><input type="text" placeholder="Plate Search.." ng-model="platesIndex.query"></p>
+<table st-table="platesIndex.plate" class="table table-striped">
 	<thead>
 	<tr>
 		<th>PLATE</th>
@@ -15,7 +15,7 @@
 	</tr>
 	</thead>
 	<tbody>
-	<tr ng-repeat="plate in plates.plate | filter : search">
+	<tr ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter">
 		<td><a ui-sref="platesShow({ id: plate.id })"><span class="plate">{{plate.plate}}</span></a></td>
 		<td>{{plate.meaning}}</td>
 		<td>{{plate.sell_price | currency:'£'}}</td>
@@ -24,7 +24,7 @@
 		<td>{{plate.reserve | currency:'£'}}</td>
 		<td>{{plate.expiry_date}}</td>
 		<td>{{plate.dLeft}}</td>
-		<td><button class="btn-default" ui-sref="platesShow({ id: plate.id })">BID NOW</button></td>
+		<td><button class="btn btn-default" ui-sref="platesShow({ id: plate.id })">BID NOW</button></td>
 	</tr>
 	</tbody>
 </table>

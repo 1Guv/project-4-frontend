@@ -29,7 +29,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('platesIndex', {
       url: '/plates',
       templateUrl: 'js/views/plates/index.html',
-      controller: 'PlatesCtrl as plates'
+      controller: 'PlatesIndexCtrl as platesIndex'
     })
     .state('platesNew', {
       url: '/plates/new',

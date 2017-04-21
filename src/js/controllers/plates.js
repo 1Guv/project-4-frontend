@@ -1,11 +1,11 @@
 angular
   .module('plateAuction')
-  .controller('PlatesCtrl', PlatesCtrl)
+  .controller('PlatesIndexCtrl', PlatesIndexCtrl)
   .controller('PlatesShowCtrl', PlatesShowCtrl)
   .controller('PlatesNewCtrl', PlatesNewCtrl);
 
-PlatesCtrl.$inject = ['Plate', '$stateParams'];
-function PlatesCtrl(Plate, $stateParams) {
+PlatesIndexCtrl.$inject = ['Plate', '$stateParams'];
+function PlatesIndexCtrl(Plate, $stateParams) {
   const vm = this;
   // vm.awesome = "Guv";
 
@@ -25,6 +25,13 @@ function PlatesCtrl(Plate, $stateParams) {
   function callEveryHour() {
     setInterval(daysLeft(), 1000 * 60 * 60);
   }
+
+  function filter(value, index, array) {
+    const re = new RegExp((vm.query || '').replace(/ /g, ''), 'i');
+    return value.plate.replace(/ /g, '').match(re) || value.meaning.replace(/ /g, '').match(re);
+  }
+
+  vm.filter = filter;
 
 }
 
