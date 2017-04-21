@@ -7,6 +7,7 @@ angular
 PlatesIndexCtrl.$inject = ['Plate', '$stateParams'];
 function PlatesIndexCtrl(Plate, $stateParams) {
   const vm = this;
+
   // vm.awesome = "Guv";
 
   Plate.query($stateParams, (data)=>{
@@ -66,6 +67,7 @@ function PlatesShowCtrl(Plate, Bid, $stateParams) {
 PlatesNewCtrl.$inject = ['Plate', '$state'];
 function PlatesNewCtrl(Plate, $state) {
   const vm = this;
+  
 
   function create() {
     Plate.save({ plate: vm.new })

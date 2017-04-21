@@ -1,8 +1,16 @@
 <h1>Add New Plate</h1>
-<form ng-submit="platesNew.create()">
+<form name="platesNew.newPlate" ng-submit="platesNew.create()" novalidate>
+  <br>
+  <div ng-show="platesNew.new.plate" class="plate">{{platesNew.new.plate}}</div>
+  <!-- ng-class="{changed: myForm.myInput.$dirty}" -->
+  <br>
   <div class="">
     <label>Plate</label>
-    <input type="text" name="plate" value="" ng-model="platesNew.new.plate">
+    <input type="text" name="plate" value="" ng-model="platesNew.new.plate" required>
+  </div>
+
+  <div class="ng-message-error" ng-messages="platesNew.newPlate.plate.$error" ng-show="(platesNew.newPlate.$submitted || platesNew.newPlate.plate.$touched)">
+        <p ng-message="required">Your plate is required.</p>
   </div>
 
   <div class="">
@@ -17,7 +25,7 @@
 
   <div class="">
     <label>Start Date</label>
-    <input type="text" name="start_date" value="" ng-model="platesNew.new.start_date">
+    <input type="date" name="start_date" value="" ng-model="platesNew.new.start_date">
   </div>
 
   <div class="">
@@ -32,7 +40,7 @@
 
   <div class="">
     <label>Expiry Date</label>
-    <input type="text" name="expiry_date" value="" ng-model="platesNew.new.expiry_date">
+    <input type="date" name="expiry_date" value="" ng-model="platesNew.new.expiry_date">
   </div>
 
   <button class="btn btn-default">Submit</button>

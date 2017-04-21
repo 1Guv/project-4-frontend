@@ -1,5 +1,5 @@
 angular
-  .module('plateAuction', ['ngResource', 'satellizer', 'ui.router', 'ui.bootstrap', 'ngAnimate', 'smart-table', 'timer'])
+  .module('plateAuction', ['ngResource', 'satellizer', 'ui.router', 'ui.bootstrap', 'ngAnimate', 'smart-table', 'timer', 'ngMessages'])
   .constant('API_URL', 'http://localhost:3000/api')
   .config(Auth)
   .controller('LoginCtrl', LoginCtrl);
