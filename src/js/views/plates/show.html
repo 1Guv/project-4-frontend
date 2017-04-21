@@ -2,7 +2,9 @@
 <h2>Make your bid on</h2>
 <br>
 <div class="plate">{{platesShow.plate.plate}}</div>
-<br>
+<br><br>
+<div><timer end-time="platesShow.plate.expiry_date">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer></div>
+<br><br>
 
 <!-- {{ platesShow.plate }} -->
 <table st-table="plates.plate" class="table table-striped">
@@ -32,7 +34,7 @@
 
 <form ng-submit="platesShow.addBid()">
   <input type="number" ng-model="platesShow.bid.amount">
-  <button class="btn btn-default">ENTER YOUR BID NOW</button>
+  <button class="btn btn-default">BID NOW</button>
 </form>
 <br>
 <div>

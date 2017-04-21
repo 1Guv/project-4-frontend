@@ -17,6 +17,10 @@ function PlatesIndexCtrl(Plate, $stateParams) {
     function daysLeft() {
       vm.plate.forEach((plate) => {
         plate.dLeft = Math.floor(( Date.parse(plate.expiry_date) - Date.parse(plate.start_date)) / 86400000);
+        // console.log(plate.dLeft);
+        // seconds left from the end date
+        plate.secondsLeft = Math.floor( Date.parse(plate.expiry_date) - Date.parse(plate.start_date));
+        // console.log(plate.secondsLeft);
       });
     }
     daysLeft();

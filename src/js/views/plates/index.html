@@ -10,7 +10,9 @@
 		<th>STATUS</th>
 		<th>RESERVE</th>
 		<th>EXPIRY DATE</th>
-		<th>DAYS LEFT</th>
+		<th>TIME LEFT</th>
+		<!-- <th>SECONDS</th> -->
+		<!-- <th>TESTING</th> -->
 		<th>BID NOW</th>
 	</tr>
 	</thead>
@@ -23,8 +25,9 @@
 		<td>{{plate.status}}</td>
 		<td>{{plate.reserve | currency:'£'}}</td>
 		<td>{{plate.expiry_date}}</td>
-		<td>{{plate.dLeft}}</td>
-		<td><button class="btn btn-default" ui-sref="platesShow({ id: plate.id })">BID NOW</button></td>
+		<!-- <td>{{plate.dLeft}}</td> -->
+		<td><timer end-time="plate.expiry_date"><h6>{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds</h6></timer></td>
+		<td><button class="btn btn-primary" ui-sref="platesShow({ id: plate.id })">BID NOW</button></td>
 	</tr>
 	</tbody>
 </table>

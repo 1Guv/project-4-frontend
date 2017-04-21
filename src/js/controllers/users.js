@@ -11,8 +11,6 @@ function UsersProfileCtrl(User, $stateParams, $state, $auth, Plate) {
   const payload = $auth.getPayload();
   const current_user = payload;
 
-
-
   vm.user = User.get($stateParams);
 
   function checkUser() {
