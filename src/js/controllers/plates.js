@@ -83,17 +83,12 @@ PlatesEditCtrl.$inject = ['Plate', '$stateParams', '$state'];
 function PlatesEditCtrl(Plate, $stateParams, $state) {
   const vm = this;
 
-  Plate.get($stateParams).$promise.then((plate) => {
-    vm.plate = plate;
-    vm.plate.date = new Date(plate.date);
-  });
-
   vm.plate = Plate.get($stateParams);
 
   function platesUpdate() {
-    vm.plate
-      .$update()
-      .then(() => $state.go('platesProfile', $stateParams));
+    Plate.update({ id: vm.plate.id, plate: vm.plate })
+      .$promise
+      .then(() => $state.go('platesShow', $stateParams));
   }
 
   vm.platesUpdate = platesUpdate;
