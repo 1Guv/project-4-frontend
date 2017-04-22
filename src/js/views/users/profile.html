@@ -19,6 +19,7 @@
     <th>START DATE</th>
     <th>EXPIRY DATE</th>
     <th>RESERVE</th>
+    <th>EDIT</th>
   </tr>
   </thead>
   <tbody ng-repeat="plate in usersProfile.user.plates">
@@ -29,6 +30,7 @@
       <td>{{plate.start_date}}</td>
       <td>{{plate.expiry_date}}</td>
       <td>{{plate.reserve}}</td>
+      <td><button class="btn btn-primary" ui-sref="platesEdit({ id: plate.id })">Edit</button></td>
     </tr>
   </tbody>
 </table>

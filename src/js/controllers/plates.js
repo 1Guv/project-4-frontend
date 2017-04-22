@@ -2,6 +2,7 @@ angular
   .module('plateAuction')
   .controller('PlatesIndexCtrl', PlatesIndexCtrl)
   .controller('PlatesShowCtrl', PlatesShowCtrl)
+  .controller('PlatesEditCtrl', PlatesEditCtrl)
   .controller('PlatesNewCtrl', PlatesNewCtrl);
 
 PlatesIndexCtrl.$inject = ['Plate', '$stateParams'];
@@ -67,7 +68,7 @@ function PlatesShowCtrl(Plate, Bid, $stateParams) {
 PlatesNewCtrl.$inject = ['Plate', '$state'];
 function PlatesNewCtrl(Plate, $state) {
   const vm = this;
-  
+
 
   function create() {
     Plate.save({ plate: vm.new })
@@ -76,4 +77,24 @@ function PlatesNewCtrl(Plate, $state) {
   }
 
   vm.create = create;
+}
+
+PlatesEditCtrl.$inject = ['Plate', '$stateParams', '$state'];
+function PlatesEditCtrl(Plate, $stateParams, $state) {
+  const vm = this;
+
+  Plate.get($stateParams).$promise.then((plate) => {
+    vm.plate = plate;
+    vm.plate.date = new Date(plate.date);
+  });
+
+  vm.plate = Plate.get($stateParams);
+
+  function platesUpdate() {
+    vm.plate
+      .$update()
+      .then(() => $state.go('platesProfile', $stateParams));
+  }
+
+  vm.platesUpdate = platesUpdate;
 }

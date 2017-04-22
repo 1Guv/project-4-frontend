@@ -17,7 +17,7 @@
 	</tr>
 	</thead>
 	<tbody>
-	<tr ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter | orderBy:'-sell_price'"">
+	<tr ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter | orderBy:'-sell_price'">
 		<td><a ui-sref="platesShow({ id: plate.id })"><span class="plate">{{plate.plate}}</span></a></td>
 		<td>{{plate.meaning}}</td>
 		<td>{{plate.sell_price | currency:'£'}}</td>

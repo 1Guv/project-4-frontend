@@ -1,17 +1,27 @@
 <div class="row">
   <div class="col-md-6">
-    <form ng-submit="auth.login()">
+    <form name="auth.loginForm" ng-submit="auth.login()" novalidate="">
+
       <div>
         <label>Email</label>
-        <input type="text" ng-model="auth.credentials.email">
+        <input type="text" name="email" ng-model="auth.credentials.email" required>
+      </div>
+
+      <div class="ng-message-error" ng-messages="auth.loginForm.email.$error" ng-show="(auth.loginFomr.email.$submitted || auth.loginForm.email.$touched)">
+        <p ng-message="required">Your email is required.</p>
       </div>
 
       <div>
         <label>Password</label>
-        <input type="password" ng-model="auth.credentials.password">
+        <input type="password" name="password" ng-model="auth.credentials.password" required>
       </div>
 
-      <button>Login</button>
+      <div class="ng-message-error" ng-messages="auth.loginForm.password.$error" ng-show="(auth.loginForm.password.$submitted || auth.loginForm.password.$touched)">
+        <p ng-message="required">Your password is required.</p>
+      </div>
+
+
+      <button class="btn btn-default">Login</button>
     </form>
   </div>
 </div>

@@ -1,0 +1,35 @@
+<h1>Plate Edit Page</h1>
+<form name="platesEdit.editPlate" ng-submit="platesEdit.platesUpdate()" novalidate>
+  <div class="">
+    <label>Username</label>
+    <input type="text" name="username" value="" ng-model="platesEdit.plate.plate" required>
+  </div>
+
+  <div class="">
+    <label>Meaning</label>
+    <input type="text" name="meaning" value="" ng-model="platesEdit.plate.meaning" required>
+  </div>
+
+  <div class="">
+    <label>Price</label>
+    <input type="text" name="price" value="" ng-model="platesEdit.plate.sell_price" required>
+  </div>
+
+  <div class="">
+    <label>Start Date</label>
+    <input type="text" name="startDate" value="" ng-model="platesEdit.plate.start_date" required>
+  </div>
+
+  <div class="">
+    <label>Expiry Date</label>
+    <input type="text" name="expiryDate" value="" ng-model="platesEdit.plate.expiry_date" required>
+  </div>
+
+  <div class="">
+    <label>Reserve</label>
+    <input type="text" name="reserve" value="" ng-model="platesEdit.plate.reserve" required>
+  </div>
+
+
+  <button class="btn btn-primary">Submit</button>
+</form>

@@ -1,37 +1,62 @@
 <div class="row">
   <div class="col-md-6">
-    <form ng-submit="auth.register()">
+    <form name="auth.registerForm" ng-submit="auth.register()" novalidate>
+
       <div>
         <label>Username</label>
-        <input type="text" ng-model="auth.user.username">
+        <input type="text" name="username" ng-model="auth.user.username" required>
+      </div>
+
+      <div class="ng-message-error" ng-messages="auth.registerForm.username.$error" ng-show="(auth.registerForm.username.$submitted || auth.registerForm.username.$touched)">
+        <p ng-message="required">Your username is required.</p>
       </div>
 
       <div>
         <label>First Name</label>
-        <input type="text" ng-model="auth.user.first_name">
+        <input type="text" name="firstName" ng-model="auth.user.first_name" required>
+      </div>
+
+      <div class="ng-message-error" ng-messages="auth.registerForm.firstName.$error" ng-show="(auth.registerForm.firstName.$submitted || auth.registerForm.firstName.$touched)">
+        <p ng-message="required">Your first name is required.</p>
       </div>
 
       <div>
         <label>Second Name</label>
-        <input type="text" ng-model="auth.user.second_name">
+        <input type="text" name="secondName" ng-model="auth.user.second_name" required>
+      </div>
+
+      <div class="ng-message-error" ng-messages="auth.registerForm.secondName.$error" ng-show="(auth.registerForm.secondName.$submitted || auth.registerForm.secondName.$touched)">
+        <p ng-message="required">Your second name is required.</p>
       </div>
 
       <div>
         <label>Email</label>
-        <input type="text" ng-model="auth.user.email">
+        <input type="text" name="email" ng-model="auth.user.email" required>
+      </div>
+
+      <div class="ng-message-error" ng-messages="auth.registerForm.email.$error" ng-show="(auth.registerForm.email.$submitted || auth.registerForm.email.$touched)">
+        <p ng-message="required">Your email is required.</p>
       </div>
 
       <div>
         <label>Password</label>
-        <input type="password" ng-model="auth.user.password">
+        <input type="password" name="password" ng-model="auth.user.password" required>
+      </div>
+
+      <div class="ng-message-error" ng-messages="auth.registerForm.password.$error" ng-show="(auth.registerForm.password.$submitted || auth.registerForm.password.$touched)">
+        <p ng-message="required">Your password is required.</p>
       </div>
 
       <div>
         <label>Password Confirmation</label>
-        <input type="password" ng-model="auth.user.password_confirmation">
+        <input type="password" name="passwordC" ng-model="auth.user.password_confirmation" required>
       </div>
 
-      <button>Register</button>
+      <div class="ng-message-error" ng-messages="auth.registerForm.passwordC.$error" ng-show="(auth.registerForm.passwordC.$submitted || auth.registerForm.passwordC.$touched)">
+        <p ng-message="required">Your password confirmation is required.</p>
+      </div>
+
+      <button class="btn btn-default">Register</button>
     </form>
   </div>
 </div>

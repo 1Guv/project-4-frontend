@@ -6,11 +6,13 @@
   <br>
   <div class="">
     <label>Plate</label>
-    <input type="text" name="plate" value="" ng-model="platesNew.new.plate" required>
+    <input type="text" name="plate" value="" ng-model="platesNew.new.plate" ng-maxlength="9" ng-minlength="2" required>
   </div>
 
   <div class="ng-message-error" ng-messages="platesNew.newPlate.plate.$error" ng-show="(platesNew.newPlate.$submitted || platesNew.newPlate.plate.$touched)">
     <p ng-message="required">Your plate is required.</p>
+    <p ng-message="maxlength">Your plate has to have 9 or less characters.</p>
+    <p ng-message="minlength">Your plate has to have 2 or more characters.</p>
   </div>
 
   <div class="">
