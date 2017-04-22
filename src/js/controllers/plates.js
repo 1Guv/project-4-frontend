@@ -28,10 +28,6 @@ function PlatesIndexCtrl(Plate, $stateParams) {
     daysLeft();
   });
 
-  function callEveryHour() {
-    setInterval(daysLeft(), 1000 * 60 * 60);
-  }
-
   function filter(value, index, array) {
     const re = new RegExp((vm.query || '').replace(/ /g, ''), 'i');
     return value.plate.replace(/ /g, '').match(re) || value.meaning.replace(/ /g, '').match(re);
@@ -86,7 +82,7 @@ function PlatesEditCtrl(Plate, $stateParams, $state) {
   vm.plate = Plate.get($stateParams);
 
   function platesUpdate() {
-    Plate.update({ id: vm.plate.id, plate: vm.plate })
+    Plate.update({ id: vm.plate.id, plate: vm.plate }) // workaround to update the plate in rails
       .$promise
       .then(() => $state.go('platesShow', $stateParams));
   }

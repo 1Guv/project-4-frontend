@@ -2,26 +2,29 @@
   <div class="col-md-6">
     <form name="auth.loginForm" ng-submit="auth.login()" novalidate="">
 
-      <div>
-        <label>Email</label>
-        <input type="text" name="email" ng-model="auth.credentials.email" required>
+      <div class="input-group">
+        <!-- <label>Email</label> -->
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input class="form-control" type="text" name="email" ng-model="auth.credentials.email" required placeholder="email">
       </div>
+      <br>
 
       <div class="ng-message-error" ng-messages="auth.loginForm.email.$error" ng-show="(auth.loginFomr.email.$submitted || auth.loginForm.email.$touched)">
         <p ng-message="required">Your email is required.</p>
       </div>
 
-      <div>
-        <label>Password</label>
-        <input type="password" name="password" ng-model="auth.credentials.password" required>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input class="form-control" type="password" name="password" ng-model="auth.credentials.password" required placeholder="password">
       </div>
+      <br>
 
       <div class="ng-message-error" ng-messages="auth.loginForm.password.$error" ng-show="(auth.loginForm.password.$submitted || auth.loginForm.password.$touched)">
         <p ng-message="required">Your password is required.</p>
       </div>
 
 
-      <button class="btn btn-default">Login</button>
+      <button class="btn btn-primary">Login</button>
     </form>
   </div>
 </div>
