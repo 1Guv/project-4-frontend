@@ -21,21 +21,21 @@
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" ng-click="main.toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <a ui-sref="home" class="w3-bar-item w3-button">APNAPLATES</a>
-    <a ng-if="!main.isAuthenticated()" ui-sref="login" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Login</a>
-    <a ng-if="!main.isAuthenticated()" ui-sref="register" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Register</a>
-    <a ng-if="main.isAuthenticated()" href="#" ng-click="main.logout()" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Logout</a>
-    <a ng-if="main.isAuthenticated()" ui-sref="usersProfile({ id: main.currentUser.id })" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Profile</a>
-    <a ui-sref="platesIndex" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Auction</a>
+    <a ui-sref="home" ui-sref-active="active" class="w3-bar-item w3-button w3-hover-blue">APNAPLATES</a>
+    <a ng-if="!main.isAuthenticated()" ui-sref="login" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small w3-hover-white">LOGIN</a>
+    <a ng-if="!main.isAuthenticated()" ui-sref="register" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small w3-hover-white">REGISTER</a>
+    <a ng-if="main.isAuthenticated()" href="#" ng-click="main.logout()" class="w3-bar-item w3-button w3-hide-small w3-hover-white">LOGOUT</a>
+    <a ng-if="main.isAuthenticated()" ui-sref="usersProfile({ id: main.currentUser.id })" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small">PROFILE</a>
+    <a ui-sref="platesIndex" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small w3-hover-white">AUCTION</a>
 
     <!-- Navbar on small screens -->
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-      <a ui-sref="home" class="w3-bar-item w3-button" ng-click="main.toggleFunction()">APNAPLATES</a>
-      <a ng-if="!main.isAuthenticated()" ui-sref="login" ui-sref-active="active" class="w3-bar-item w3-button" ng-click="main.toggleFunction()">Login</a>
-      <a ng-if="!main.isAuthenticated()" ui-sref="register" ui-sref-active="active" class="w3-bar-item w3-button" ng-click="main.toggleFunction()">Register</a>
-      <a ng-if="main.isAuthenticated()" href="#" ng-click="main.logout()" class="w3-bar-item w3-button">Logout</a>
-      <a ng-if="main.isAuthenticated()" ui-sref="usersProfile({ id: main.currentUser.id })" ui-sref-active="active" href="#" ng-click="main.logout()" class="w3-bar-item w3-button">Profile</a>
-      <a ui-sref="platesIndex" ui-sref-active="active" ng-click="main.logout()" class="w3-bar-item w3-button">Auction</a>
+      <a ui-sref="home" class="w3-bar-item w3-button w3-hover-white" ng-click="main.toggleFunction()">APNAPLATES</a>
+      <a ng-if="!main.isAuthenticated()" ui-sref="login" ui-sref-active="active" class="w3-bar-item w3-button w3-hover-white" ng-click="main.toggleFunction()">Login</a>
+      <a ng-if="!main.isAuthenticated()" ui-sref="register" ui-sref-active="active" class="w3-bar-item w3-button w3-hover-white" ng-click="main.toggleFunction()">Register</a>
+      <a ng-if="main.isAuthenticated()" href="#" ng-click="main.logout()" class="w3-bar-item w3-button w3-hover-white">Logout</a>
+      <a ng-if="main.isAuthenticated()" ui-sref="usersProfile({ id: main.currentUser.id })" ui-sref-active="active" href="#" ng-click="main.logout()" class="w3-bar-item w3-button w3-hover-white">Profile</a>
+      <a ui-sref="platesIndex" ui-sref-active="active" ng-click="main.logout()" class="w3-bar-item w3-button w3-hover-white">Auction</a>
     </div>
   </div>
 </div>
@@ -46,7 +46,7 @@
   </header>
 
   <body>
-    <div class="container">
+    <div>
       <main ui-view></main>
       <!-- <h1>APNAPLATES</h1>
       <h2>Number Plate Auction</h2> -->

@@ -1,38 +1,42 @@
-<h1 class="well">Auction Listings</h1>
+<div class="w3-container">
+	<br><br>
+	<h1 class="w3-display-topmiddle">Auction Listings</h1>
+	<br>
 
-<div class="input-group">
-	<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-	<input class="form-control" type="text" ng-model="platesIndex.query" placeholder="Plate Search.... please type a name, word or the number you are looking for..">
+	<div class="input-group">
+		<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+		<input class="form-control" type="text" ng-model="platesIndex.query" placeholder="Plate Search.... please type a name, word or the number you are looking for..">
+	</div>
+	<br><br>
+	<table st-table="platesIndex.plate" class="table table-striped">
+		<thead>
+		<tr>
+			<th>PLATE</th>
+			<th>MEANING</th>
+			<th>PRICE</th>
+			<th>START DATE</th>
+			<th>STATUS</th>
+			<th>RESERVE</th>
+			<th>EXPIRY DATE</th>
+			<th>TIME LEFT</th>
+			<!-- <th>SECONDS</th> -->
+			<!-- <th>TESTING</th> -->
+			<th>BID NOW</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter | orderBy:'-sell_price'">
+			<td><a ui-sref="platesShow({ id: plate.id })"><span class="plate">{{plate.plate}}</span></a></td>
+			<td>{{plate.meaning}}</td>
+			<td>{{plate.sell_price | currency:'£'}}</td>
+			<td>{{plate.start_date}}</td>
+			<td>{{plate.status}}</td>
+			<td>{{plate.reserve | currency:'£'}}</td>
+			<td>{{plate.expiry_date}}</td>
+			<!-- <td>{{plate.dLeft}}</td> -->
+			<td><timer end-time="plate.expiry_date"><h6>{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds</h6></timer></td>
+			<td><button class="btn btn-primary" ui-sref="platesShow({ id: plate.id })">BID NOW</button></td>
+		</tr>
+		</tbody>
+	</table>
 </div>
-<br><br>
-<table st-table="platesIndex.plate" class="table table-striped">
-	<thead>
-	<tr>
-		<th>PLATE</th>
-		<th>MEANING</th>
-		<th>PRICE</th>
-		<th>START DATE</th>
-		<th>STATUS</th>
-		<th>RESERVE</th>
-		<th>EXPIRY DATE</th>
-		<th>TIME LEFT</th>
-		<!-- <th>SECONDS</th> -->
-		<!-- <th>TESTING</th> -->
-		<th>BID NOW</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter | orderBy:'-sell_price'">
-		<td><a ui-sref="platesShow({ id: plate.id })"><span class="plate">{{plate.plate}}</span></a></td>
-		<td>{{plate.meaning}}</td>
-		<td>{{plate.sell_price | currency:'£'}}</td>
-		<td>{{plate.start_date}}</td>
-		<td>{{plate.status}}</td>
-		<td>{{plate.reserve | currency:'£'}}</td>
-		<td>{{plate.expiry_date}}</td>
-		<!-- <td>{{plate.dLeft}}</td> -->
-		<td><timer end-time="plate.expiry_date"><h6>{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds</h6></timer></td>
-		<td><button class="btn btn-primary" ui-sref="platesShow({ id: plate.id })">BID NOW</button></td>
-	</tr>
-	</tbody>
-</table>
