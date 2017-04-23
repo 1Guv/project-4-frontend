@@ -16,9 +16,9 @@
     <br><br>
 
     <!-- {{ platesShow.plate }} -->
-    <table st-table="plates.plate" class="table table-striped">
+    <table st-table="plates.plate" class="w3-table w3-hover-green">
       <thead>
-      <tr>
+      <tr class="w3-red">
         <th>PLATE</th>
         <th>MEANING</th>
         <th>PRICE</th>
@@ -43,8 +43,9 @@
 
 
     <br>
-    <div>
+    <div class="gcentre">
       <h4>Current Bids:</h4>
+      <br>
       <div ng-repeat="bid in platesShow.plate.bids">
         <div class="text-capitalize"><span class="blue">{{ bid.user.username }}</span> - <span class="badge">£ {{ bid.amount }}</span></div>
         <!-- <div>£ {{ bid.amount }}</div> -->

@@ -1,58 +1,70 @@
-<h1>Profile Page</h1>
-<div>
-  <div>
-    <div>Username: {{ usersProfile.user.username }}</div>
-    <div>Full Name: {{ usersProfile.user.full_name }}</div>
-    <div>Email: {{ usersProfile.user.email }}</div>
+<div class="w3-container">
+  <div class="w3-display-topmiddle">
     <br>
+
+    <div class="gcentre">
+      <h1>Profile Page</h1>
+      <div>
+        <div>Username: {{ usersProfile.user.username }}</div>
+        <div>Full Name: {{ usersProfile.user.full_name }}</div>
+        <div>Email: {{ usersProfile.user.email }}</div>
+        <br>
+        <button class="btn btn-primary" ui-sref="usersEdit({ id: usersProfile.user.id })">Edit</button>
+      </div>
+    </div>
+
+    <br><br>
+    <h2 class="gcentre">Your Plates:</h2>
+    <br>
+    <table class="w3-table w3-card-4 w3-centered w3-hoverable w3-responsive">
+      <thead>
+      <tr class="w3-purple">
+        <th>PLATE</th>
+        <th>MEANING</th>
+        <th>PRICE</th>
+        <th>START DATE</th>
+        <th>EXPIRY DATE</th>
+        <th>RESERVE</th>
+        <th>EDIT</th>
+      </tr>
+      </thead>
+      <tbody ng-repeat="plate in usersProfile.user.plates">
+        <tr>
+          <td><span class="plateTwo">{{plate.plate}}</span></td>
+          <td>{{plate.meaning}}</td>
+          <td>{{plate.sell_price | currency:'£'}}</td>
+          <td>{{plate.start_date}}</td>
+          <td>{{plate.expiry_date}}</td>
+          <td>{{plate.reserve}}</td>
+          <td><button class="btn btn-primary" ui-sref="platesEdit({ id: plate.id })">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div class="gcentre">
+      <button class="btn btn-primary" ui-sref="platesNew">Add Plate</button>
+    </div>
+    <br><br>
+
+    <h2 class="gcentre">Your Bids:</h2>
+    <table class="w3-table w3-card-4 w3-centered w3-hoverable w3-responsive">
+      <thead>
+        <tr class="w3-green w3-centred">
+          <th>PLATE</th>
+          <th>BID</th>
+          <th>PRICE</th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="bid in usersProfile.user.bids">
+        <tr>
+          <!-- <div>{{usersProfile.user.bids}}</div> -->
+          <td><span class="plateTwo">{{bid.plate.plate}}</span></td>
+          <td>{{bid.amount | currency:'£'}}</td>
+          <td>{{bid.plate.sell_price | currency:'£'}}</td>
+          <br>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
   </div>
 </div>
-<button class="btn btn-primary" ui-sref="usersEdit({ id: usersProfile.user.id })">Edit</button>
-
-<h2>Your Plates:</h2>
-<table class="table table-strpied">
-  <thead>
-  <tr>
-    <th>PLATE</th>
-    <th>MEANING</th>
-    <th>PRICE</th>
-    <th>START DATE</th>
-    <th>EXPIRY DATE</th>
-    <th>RESERVE</th>
-    <th>EDIT</th>
-  </tr>
-  </thead>
-  <tbody ng-repeat="plate in usersProfile.user.plates">
-    <tr>
-      <td><span class="plateTwo">{{plate.plate}}</span></td>
-      <td>{{plate.meaning}}</td>
-      <td>{{plate.sell_price | currency:'£'}}</td>
-      <td>{{plate.start_date}}</td>
-      <td>{{plate.expiry_date}}</td>
-      <td>{{plate.reserve}}</td>
-      <td><button class="btn btn-primary" ui-sref="platesEdit({ id: plate.id })">Edit</button></td>
-    </tr>
-  </tbody>
-</table>
-<br>
-<button class="btn btn-primary" ui-sref="platesNew">Add Plate</button>
-
-<h2>Your Bids:</h2>
-<table class="table table-strpied">
-  <thead>
-    <tr>
-      <th>PLATE</th>
-      <th>BID</th>
-      <th>PRICE</th>
-    </tr>
-  </thead>
-  <tbody ng-repeat="bid in usersProfile.user.bids">
-    <tr>
-      <!-- <div>{{usersProfile.user.bids}}</div> -->
-      <td><span class="plateTwo">{{bid.plate.plate}}</span></td>
-      <td>{{bid.amount | currency:'£'}}</td>
-      <td>{{bid.plate.sell_price | currency:'£'}}</td>
-      <br>
-    </tr>
-  </tbody>
-</table>
