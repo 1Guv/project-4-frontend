@@ -1,47 +1,56 @@
-<h1 class="well">Auction Plate Show</h1>
-<h2>Make your bid on</h2>
-<br>
-<div class="plate">{{platesShow.plate.plate}}</div>
-<br><br>
-<div><timer end-time="platesShow.plate.expiry_date">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer></div>
-<br><br>
-
-<!-- {{ platesShow.plate }} -->
-<table st-table="plates.plate" class="table table-striped">
-  <thead>
-  <tr>
-    <th>PLATE</th>
-    <th>MEANING</th>
-    <th>PRICE</th>
-    <th>START DATE</th>
-    <th>STATUS</th>
-    <th>RESERVE</th>
-    <th>EXPIRY DATE</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{ platesShow.plate.plate }}</td>
-      <td>{{ platesShow.plate.meaning }}</td>
-      <td>{{ platesShow.plate.sell_price }}</td>
-      <td>{{ platesShow.plate.start_date }}</td>
-      <td>{{ platesShow.plate.status }}</td>
-      <td>{{ platesShow.plate.reserve }}</td>
-      <td>{{ platesShow.plate.expiry_date }}</td>
-    </tr>
-  </tbody>
-</table>
-
-<form ng-submit="platesShow.addBid()">
-  <input type="number" ng-model="platesShow.bid.amount">
-  <button class="btn btn-primary">BID NOW</button>
-</form>
-<br>
-<div>
-  <h4>Current Bids:</h4>
-  <div ng-repeat="bid in platesShow.plate.bids">
-    <div class="text-capitalize"><span class="blue">{{ bid.user.username }}</span> - <span class="badge">£ {{ bid.amount }}</span></div>
-    <!-- <div>£ {{ bid.amount }}</div> -->
+<div class="w3-container">
+  <div class="w3-display-topmiddle">
     <br>
+    <h1 class="gcentre">Auction Plate Show</h1>
+    <br>
+    <h2 class="gcentre">Make your bid on:</h2>
+    <br>
+    <div class="gcentre"><span class="plateThree">{{platesShow.plate.plate}}</span></div>
+    <br><br>
+    <form class="gcentre" ng-submit="platesShow.addBid()">
+      <input type="number" ng-model="platesShow.bid.amount">
+      <button class="btn btn-primary">BID NOW</button>
+    </form>
+    <br>
+    <div class="gcentre"><timer end-time="platesShow.plate.expiry_date">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer></div>
+    <br><br>
+
+    <!-- {{ platesShow.plate }} -->
+    <table st-table="plates.plate" class="table table-striped">
+      <thead>
+      <tr>
+        <th>PLATE</th>
+        <th>MEANING</th>
+        <th>PRICE</th>
+        <th>START DATE</th>
+        <th>STATUS</th>
+        <th>RESERVE</th>
+        <th>EXPIRY DATE</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ platesShow.plate.plate }}</td>
+          <td>{{ platesShow.plate.meaning }}</td>
+          <td>{{ platesShow.plate.sell_price }}</td>
+          <td>{{ platesShow.plate.start_date }}</td>
+          <td>{{ platesShow.plate.status }}</td>
+          <td>{{ platesShow.plate.reserve }}</td>
+          <td>{{ platesShow.plate.expiry_date }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <br>
+    <div>
+      <h4>Current Bids:</h4>
+      <div ng-repeat="bid in platesShow.plate.bids">
+        <div class="text-capitalize"><span class="blue">{{ bid.user.username }}</span> - <span class="badge">£ {{ bid.amount }}</span></div>
+        <!-- <div>£ {{ bid.amount }}</div> -->
+        <br>
+      </div>
+    </div>
   </div>
+
 </div>

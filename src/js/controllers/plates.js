@@ -37,8 +37,8 @@ function PlatesIndexCtrl(Plate, $stateParams) {
 
 }
 
-PlatesShowCtrl.$inject = ['Plate', 'Bid', '$stateParams'];
-function PlatesShowCtrl(Plate, Bid, $stateParams) {
+PlatesShowCtrl.$inject = ['Plate', 'Bid', '$stateParams', '$state'];
+function PlatesShowCtrl(Plate, Bid, $stateParams, $state) {
   const vm = this;
   vm.bid = {};
   vm.addBid = addBid;
@@ -56,6 +56,7 @@ function PlatesShowCtrl(Plate, Bid, $stateParams) {
       .$promise
       .then((bid) => {
         console.log(bid);
+        $state.go('platesIndex');
       });
   }
 

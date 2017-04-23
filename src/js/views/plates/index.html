@@ -3,14 +3,14 @@
 	<h1 class="w3-display-topmiddle">Auction Listings</h1>
 	<br>
 
-	<div class="input-group">
+	<div class="w3-card-4 input-group">
 		<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-		<input class="form-control" type="text" ng-model="platesIndex.query" placeholder="Plate Search.... please type a name, word or the number you are looking for..">
+		<input class="form-control" type="text" ng-model="platesIndex.query" placeholder="Plate Search.... please type a name, word or the number you are looking for.." width="300px">
 	</div>
-	<br><br>
-	<table st-table="platesIndex.plate" class="table table-striped">
+	<br>
+	<table st-table="platesIndex.plate" class="w3-table w3-card-4 w3-centered w3-hoverable w3-responsive">
 		<thead>
-		<tr>
+		<tr class="w3-red">
 			<th>PLATE</th>
 			<th>MEANING</th>
 			<th>PRICE</th>
@@ -25,7 +25,7 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter | orderBy:'-sell_price'">
+		<tr class="w3-hover-blue" ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter | orderBy:'-sell_price'">
 			<td><a ui-sref="platesShow({ id: plate.id })"><span class="plate">{{plate.plate}}</span></a></td>
 			<td>{{plate.meaning}}</td>
 			<td>{{plate.sell_price | currency:'£'}}</td>
@@ -35,7 +35,7 @@
 			<td>{{plate.expiry_date}}</td>
 			<!-- <td>{{plate.dLeft}}</td> -->
 			<td><timer end-time="plate.expiry_date"><h6>{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds</h6></timer></td>
-			<td><button class="btn btn-primary" ui-sref="platesShow({ id: plate.id })">BID NOW</button></td>
+			<td><button class="btn btn-default" ui-sref="platesShow({ id: plate.id })">BID NOW</button></td>
 		</tr>
 		</tbody>
 	</table>
