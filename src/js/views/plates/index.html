@@ -1,5 +1,10 @@
 <h1 class="well">Auction Listings</h1>
-<p><input type="text" placeholder="Plate Search.." ng-model="platesIndex.query"></p>
+
+<div class="input-group">
+	<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+	<input class="form-control" type="text" ng-model="platesIndex.query" placeholder="Plate Search.... please type a name, word or the number you are looking for..">
+</div>
+<br><br>
 <table st-table="platesIndex.plate" class="table table-striped">
 	<thead>
 	<tr>
