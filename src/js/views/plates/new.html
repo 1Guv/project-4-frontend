@@ -4,10 +4,11 @@
   <div ng-show="platesNew.new.plate" class="plate">{{platesNew.new.plate}}</div>
   <!-- ng-class="{changed: myForm.myInput.$dirty}" -->
   <br>
-  <div class="">
-    <label>Plate</label>
-    <input type="text" name="plate" value="" ng-model="platesNew.new.plate" ng-maxlength="9" ng-minlength="2" required>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+    <input class="form-control" type="text" name="plate" value="" ng-model="platesNew.new.plate" ng-maxlength="9" ng-minlength="2" required placeholder="Plate">
   </div>
+  <br>
 
   <div class="ng-message-error" ng-messages="platesNew.newPlate.plate.$error" ng-show="(platesNew.newPlate.$submitted || platesNew.newPlate.plate.$touched)">
     <p ng-message="required">Your plate is required.</p>
@@ -15,59 +16,65 @@
     <p ng-message="minlength">Your plate has to have 2 or more characters.</p>
   </div>
 
-  <div class="">
-    <label>Meaning</label>
-    <input type="text" name="meaning" value="" ng-model="platesNew.new.meaning" required>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-chevron-right"></i></span>
+    <input class="form-control" type="text" name="meaning" value="" ng-model="platesNew.new.meaning" required placeholder="Meaning">
   </div>
+  <br>
 
   <div class="ng-message-error" ng-messages="platesNew.newPlate.meaning.$error" ng-show="(platesNew.newPlate.$submitted || platesNew.newPlate.meaning.$touched)">
     <p ng-message="required">The meaning for your plate is required.</p>
   </div>
 
-  <div class="">
-    <label>Sell Price</label>
-    <input type="text" name="sell_price" value="" ng-model="platesNew.new.sell_price" required>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-gbp"></i></span>
+    <input class="form-control" type="text" name="sell_price" value="" ng-model="platesNew.new.sell_price" required placeholder="Sell Price">
   </div>
+  <br>
 
   <div class="ng-message-error" ng-messages="platesNew.newPlate.sell_price.$error" ng-show="(platesNew.newPlate.$submitted || platesNew.newPlate.sell_price.$touched)">
     <p ng-message="required">The price is required.</p>
   </div>
 
-  <div class="">
-    <label>Start Date</label>
-    <input type="date" name="start_date" value="" ng-model="platesNew.new.start_date" required>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+    <input class="form-control" type="text" name="start_date" value="" ng-model="platesNew.new.start_date" required placeholder="Date">
   </div>
+  <br>
 
   <div class="ng-message-error" ng-messages="platesNew.newPlate.start_date.$error" ng-show="(platesNew.newPlate.$submitted || platesNew.newPlate.start_date.$touched)">
     <p ng-message="required">The start date is required.</p>
   </div>
 
-  <div class="">
-    <label>Status</label>
-    <input type="text" name="status" value="" ng-model="platesNew.new.status" required>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-question-sign"></i></span>
+    <input class="form-control" type="text" name="status" value="" ng-model="platesNew.new.status" required placeholder="Status eg Live, Pending or Sold">
   </div>
+  <br>
 
   <div class="ng-message-error" ng-messages="platesNew.newPlate.status.$error" ng-show="(platesNew.newPlate.$submitted || platesNew.newPlate.status.$touched)">
     <p ng-message="required">The status can be either Live, Pending or Sold and is required.</p>
   </div>
 
-  <div class="">
-    <label>Reserve</label>
-    <input type="text" name="reserve" value="" ng-model="platesNew.new.reserve" required>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-hourglass"></i></span>
+    <input class="form-control" type="text" name="reserve" value="" ng-model="platesNew.new.reserve" required placeholder="Reserve">
   </div>
+  <br>
 
   <div class="ng-message-error" ng-messages="platesNew.newPlate.reserve.$error" ng-show="(platesNew.newPlate.$submitted || platesNew.newPlate.reserve.$touched)">
     <p ng-message="required">The reserve is required.</p>
   </div>
 
-  <div class="">
-    <label>Expiry Date</label>
-    <input type="date" name="expiry_date" value="" ng-model="platesNew.new.expiry_date" required>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+    <input class="form-control" type="text" name="expiry_date" value="" ng-model="platesNew.new.expiry_date" required placeholder="Date">
   </div>
+  <br>
 
   <div class="ng-message-error" ng-messages="platesNew.newPlate.expiry_date.$error" ng-show="(platesNew.newPlate.$submitted || platesNew.newPlate.expiry_date.$touched)">
     <p ng-message="required">The expiry date is required.</p>
   </div>
 
-  <button class="btn btn-default">Submit</button>
+  <button class="btn btn-primary">Submit</button>
 </form>

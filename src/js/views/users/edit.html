@@ -1,36 +1,41 @@
-<h1>User Edit Page</h1>
+<h1>Profile Edit Page</h1>
+<br>
 <form name="usersEdit.editUser" ng-submit="usersEdit.usersUpdate()" novalidate>
-  <div class="">
-    <label>Username</label>
-    <input type="text" name="username" value="" ng-model="usersEdit.user.username" required>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> Username:</span>
+    <input class="form-control" type="text" name="username" value="" ng-model="usersEdit.user.username" required placeholder="Username">
   </div>
+  <br>
 
   <div class="ng-message-error" ng-messages="usersEdit.editUser.username.$error" ng-show="(usersEdit.editUser.$submitted || usersEdit.editUser.username.$touched)">
     <p ng-message="required">Your username is required.</p>
   </div>
 
-  <div class="">
-    <label>First Name</label>
-    <input type="text" name="first_name" value="" ng-model="usersEdit.user.first_name" required>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> First Name:</span>
+    <input class="form-control" type="text" name="first_name" value="" ng-model="usersEdit.user.first_name" required placeholder="">
   </div>
+  <br>
 
   <div class="ng-message-error" ng-messages="usersEdit.editUser.first_name.$error" ng-show="(usersEdit.editUser.$submitted || usersEdit.editUser.first_name.$touched)">
     <p ng-message="required">Your first_name is required.</p>
   </div>
 
-  <div class="">
-    <label>Last Name</label>
-    <input type="text" name="last_name" value="" ng-model="usersEdit.user.last_name" required>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> Last Name:</span>
+    <input class="form-control" type="text" name="last_name" value="" ng-model="usersEdit.user.last_name" required placeholder="">
   </div>
+  <br>
 
   <div class="ng-message-error" ng-messages="usersEdit.editUser.last_name.$error" ng-show="(usersEdit.editUser.$submitted || usersEdit.editUser.last_name.$touched)">
     <p ng-message="required">Your last_name is required.</p>
   </div>
 
-  <div class="">
-    <label>Email</label>
-    <input type="text" name="email" value="" ng-model="usersEdit.user.email" required>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+    <input class="form-control" type="text" name="email" value="" ng-model="usersEdit.user.email" required placeholder="">
   </div>
+  <br>
 
   <div class="ng-message-error" ng-messages="usersEdit.editUser.email.$error" ng-show="(usersEdit.editUser.$submitted || usersEdit.editUser.email.$touched)">
     <p ng-message="required">Your email is required.</p>
