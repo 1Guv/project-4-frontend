@@ -25,7 +25,7 @@
     <a ng-if="!main.isAuthenticated()" ui-sref="login" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small w3-hover-white">LOGIN</a>
     <a ng-if="!main.isAuthenticated()" ui-sref="register" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small w3-hover-white">REGISTER</a>
     <a ng-if="main.isAuthenticated()" href="#" ng-click="main.logout()" class="w3-bar-item w3-button w3-hide-small w3-hover-white">LOGOUT</a>
-    <a ng-if="main.isAuthenticated()" ui-sref="usersProfile({ id: main.currentUser.id })" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small w3-hover-white">PROFILE</a>
+    <a ng-if="main.isAuthenticated()" ui-sref="usersProfile({ id: main.currentUser.id })" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small w3-hover-white w3-right">PROFILE</a>
     <a ui-sref="platesIndex" ui-sref-active="active" class="w3-bar-item w3-button w3-hide-small w3-hover-white">AUCTION</a>
 
     <!-- Navbar on small screens -->
@@ -45,7 +45,7 @@
     </div>
   </header>
 
-  <body>
+  <body class="w3-khaki">
     <div>
       <main ui-view></main>
       <!-- <h1>APNAPLATES</h1>
