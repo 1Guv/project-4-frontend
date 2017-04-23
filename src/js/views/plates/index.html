@@ -36,33 +36,3 @@
 	</tr>
 	</tbody>
 </table>
-
-
-
-<div ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter | orderBy:'-sell_price'">
-	<div class="card" style="width: 20rem;">
-		<div class="middle"><a ui-sref="platesShow({ id: plate.id })"><span class="plate">{{plate.plate}}</span></a></div>
-		<div>Meaning: {{plate.meaning}}</div>
-		<div>Sell Price: {{plate.sell_price | currency:'£'}}</div>
-		<div>Start Date: {{plate.start_date}}</div>
-		<div>Status: {{plate.status}}</div>
-		<div>Reserve: {{plate.reserve | currency:'£'}}</div>
-		<div>Plate Expiry: {{plate.expiry_date}}</div>
-		<!-- <div>{{plate.dLeft}}</div> -->
-		<div><timer end-time="plate.expiry_date"><h6>Timer: {{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds</h6></timer></div>
-		<div class="middle"><button class="btn btn-primary" ui-sref="platesShow({ id: plate.id })">BID NOW</button></div>
-		<br>
-	</div>
-	<br>
-</div>
-
-
-
-<!-- <div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> -->
