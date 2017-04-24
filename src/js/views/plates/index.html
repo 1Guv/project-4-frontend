@@ -6,14 +6,17 @@
   </div>
 	<br><br>
 
+ 	<!-- Plate Search -->
 	<div class="gcentre w3-card-4 input-group">
 		<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
 		<input class="form-control" type="text" ng-model="platesIndex.query" placeholder="Plate Search.... please type a name, word or the number you are looking for.." width="300px">
 	</div>
 	<br>
-	<table st-table="platesIndex.plate" class="w3-table w3-card-4 w3-centered w3-hoverable w3-responsive">
+
+	<!-- Plates in table with Rows & Columns -->
+	<!-- <table st-table="platesIndex.plate" class="w3-table w3-card-4 w3-centered w3-hoverable w3-responsive">
 		<thead>
-		<tr class="w3-red">
+		<tr class="w3-black">
 			<th>PLATE</th>
 			<th>MEANING</th>
 			<th>PRICE</th>
@@ -22,13 +25,11 @@
 			<th>RESERVE</th>
 			<th>EXPIRY DATE</th>
 			<th>TIME LEFT</th>
-			<!-- <th>SECONDS</th> -->
-			<!-- <th>TESTING</th> -->
 			<th>BID NOW</th>
 		</tr>
 		</thead>
 		<tbody>
-		<tr class="w3-white w3-hover-blue" ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter | orderBy:'-sell_price'">
+		<tr class="w3-white w3-hover-red" ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter | orderBy:'-sell_price'">
 			<td><a ui-sref="platesShow({ id: plate.id })"><span class="plate">{{plate.plate}}</span></a></td>
 			<td>{{plate.meaning}}</td>
 			<td>{{plate.sell_price | currency:'£'}}</td>
@@ -36,11 +37,46 @@
 			<td>{{plate.status}}</td>
 			<td>{{plate.reserve | currency:'£'}}</td>
 			<td>{{plate.expiry_date}}</td>
-			<!-- <td>{{plate.dLeft}}</td> -->
 			<td><timer end-time="plate.expiry_date"><h6>{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds</h6></timer></td>
 			<td><button class="btn btn-primary" ui-sref="platesShow({ id: plate.id })">BID NOW</button></td>
 		</tr>
 		</tbody>
-	</table>
+	</table> -->
+	<!-- end of table -->
+
 	<br><br>
+
+	<!-- Displaying the Cards -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3" ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter | orderBy:'-sell_price'">
+				<div class="w3-card-4 gcentre" style="width:250px;">
+					<header class="w3-container w3-black">
+					  <div class=""><h1>{{plate.meaning}}</h1></div>
+					</header>
+
+					<div class="w3-container w3-white">
+						<br>
+						<div><a ui-sref="platesShow({ id: plate.id })"><span class="plateFour">{{plate.plate}}</span></a></div>
+						<br>
+					  <p>{{plate.start_date}}</p>
+						<p>{{plate.status}}</p>
+						<p>{{plate.reserve | currency:'£'}}</p>
+						<p>{{plate.expiry_date}}</p>
+						<div><timer end-time="plate.expiry_date"><h6>{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds</h6></timer></div>
+					</div>
+
+					<footer class="w3-container w3-red">
+					  <h5>{{plate.sell_price | currency:'£'}}</h5>
+					</footer>
+					<br>
+					<div><button class="btn btn-primary" ui-sref="platesShow({ id: plate.id })">BID NOW</button></div>
+					<br>
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
+
+
 </div>
