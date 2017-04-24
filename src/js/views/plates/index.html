@@ -9,7 +9,7 @@
  	<!-- Plate Search -->
 	<div class="gcentre w3-card-4 w3-display-middle input-group" style="width: 550px;">
 		<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-		<input class="form-control" type="text" ng-model="platesIndex.query" placeholder="Plate Search.... please type a name, word or the number you are looking for.." width="300px">
+		<input class="form-control" type="text" ng-model="platesIndex.query" placeholder="Plate Search.... enter your name, initials, anything! " width="300px">
 	</div>
 
 	<!-- Plates in table with Rows & Columns -->
@@ -58,17 +58,17 @@
 					<div class="w3-container w3-white">
 						<br>
 						<div><a ui-sref="platesShow({ id: plate.id })"><span class="plateFour">{{plate.plate}}</span></a></div>
-						<hr>
+						<!-- <hr>
 					  <p>{{plate.start_date}}</p>
 						<hr>
 						<p>{{plate.status}}</p>
 						<hr>
-						<p>{{plate.reserve | currency:'£'}}</p>
-						<hr>
-						<p>{{plate.expiry_date}}</p>
+						<p>{{plate.reserve | currency:'£'}}</p> -->
+						<!-- <hr>
+						<p>EXPIRY DATE:</p>
+						<p>{{plate.expiry_date}}</p> -->
 						<hr>
 						<div><timer end-time="plate.expiry_date"><h6>{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds</h6></timer></div>
-						<hr>
 					</div>
 
 					<footer class="w3-container w3-red">
