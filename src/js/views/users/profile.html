@@ -10,9 +10,9 @@
 
       <div>
         <br><br>
-        <div>Username: {{ usersProfile.user.username }}</div>
-        <div>Full Name: {{ usersProfile.user.full_name }}</div>
-        <div>Email: {{ usersProfile.user.email }}</div>
+        <div class="black">Username: {{ usersProfile.user.username }}</div>
+        <div class="black">Full Name: {{ usersProfile.user.full_name }}</div>
+        <div class="black">Email: {{ usersProfile.user.email }}</div>
         <br>
         <button class="btn btn-primary" ui-sref="usersEdit({ id: usersProfile.user.id })">Edit</button>
       </div>
@@ -34,7 +34,7 @@
       </tr>
       </thead>
       <tbody ng-repeat="plate in usersProfile.user.plates">
-        <tr>
+        <tr class="black">
           <td><span class="plateTwo">{{plate.plate}}</span></td>
           <td>{{plate.meaning}}</td>
           <td>{{plate.sell_price | currency:'£'}}</td>
@@ -61,7 +61,7 @@
         </tr>
       </thead>
       <tbody ng-repeat="bid in usersProfile.user.bids">
-        <tr>
+        <tr class="black">
           <!-- <div>{{usersProfile.user.bids}}</div> -->
           <td><span class="plateTwo">{{bid.plate.plate}}</span></td>
           <td>{{bid.amount | currency:'£'}}</td>

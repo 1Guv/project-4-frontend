@@ -49,7 +49,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3" ng-repeat="plate in platesIndex.plate | filter: platesIndex.filter | orderBy:'-sell_price'">
-				<div class="w3-card-4 gcentre" style="width:250px;">
+				<div class="w3-card-4 gcentre w3-border w3-round-large" style="width:250px;">
+
 					<header class="w3-container w3-black">
 					  <div class=""><h1>{{plate.meaning}}</h1></div>
 					</header>
@@ -57,12 +58,17 @@
 					<div class="w3-container w3-white">
 						<br>
 						<div><a ui-sref="platesShow({ id: plate.id })"><span class="plateFour">{{plate.plate}}</span></a></div>
-						<br>
+						<hr>
 					  <p>{{plate.start_date}}</p>
+						<hr>
 						<p>{{plate.status}}</p>
+						<hr>
 						<p>{{plate.reserve | currency:'£'}}</p>
+						<hr>
 						<p>{{plate.expiry_date}}</p>
+						<hr>
 						<div><timer end-time="plate.expiry_date"><h6>{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds</h6></timer></div>
+						<hr>
 					</div>
 
 					<footer class="w3-container w3-red">
