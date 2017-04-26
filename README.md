@@ -12,6 +12,15 @@ Just to give you a little background, I currently run an online business called 
 
 This idea was developed because my current customers provided me with some feedback and from that research I identified that their could be scope for an addittional auction platform to help my customers to sell their private number plates.
 
+The home page looks like this:
+
+![APNAPLATES Number Plate Auction - Home Page](https://raw.githubusercontent.com/1Guv/project-4-frontend/master/src/images/AP-AUCTION-HOMEPAGE.png?raw=true "APNAPLATES Number Plate Auction - Home Page screen shot")
+
+The auction listings page looks like this:
+
+![APNAPLATES Number Plate Auction - Listings Page](https://github.com/1Guv/project-4-frontend/blob/master/src/images/AP-AUCTION-PLATES.png?raw=true?raw=true "APNAPLATES Number Plate Auction - Listings Page screen shot")
+
+
 ##Approach / How it works:
 
 * When you enter the website you will be shown a splash page.
