@@ -35,7 +35,7 @@ The auction listings page looks like this:
 
 ##The build:
 
-* For the project we used a full Express RESTful app using Angular on the frontend with Node.js and then a Ruby-on-Rails API on the backend.
+* For the project we used a full Express RESTful app using AngularJS on the frontend with Ruby-on-Rails API on the backend.
 * I created a Rails API to deliver json data which includes token authentication, BCRYPT and JWOT with CORS.
 * We used Express, Ajax, JSON, JS, HTML5, SASS and Angular to create the frontend app.
 * Used Ng-Messages for full form validation.

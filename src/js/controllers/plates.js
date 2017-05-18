@@ -29,8 +29,8 @@ function PlatesIndexCtrl(Plate, $stateParams) {
   });
 
   function filter(value, index, array) {
-    const re = new RegExp((vm.query || '').replace(/ /g, ''), 'i');
-    return value.plate.replace(/ /g, '').match(re) || value.meaning.replace(/ /g, '').match(re);
+    const re = new RegExp((vm.query || '').replace(/ /g, ''), 'i');                               // takes the inputted search value
+    return value.plate.replace(/ /g, '').match(re) || value.meaning.replace(/ /g, '').match(re);  // searches the plate and meaning field for all plates ONLY (usually its all of the object)
   }
 
   vm.filter = filter;
